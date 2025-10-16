@@ -1,18 +1,17 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void palin(int num,int num1,int num2){
-    if(num==0)
-    return;
-    int sum=num1+num2;
-    cout<<sum<<" ";
-    palin(--num,num2,sum);
+int palin(int num){
+    if(num<=1)
+    return num;
+    int num1=palin(num-1);
+    int num2=palin(num-2);
+    return num1+num2;
 }
-
 int main(){
     int n;
     cin>>n;
-    cout<<0<<" "<<1<<" ";
-    palin(n,0,1);
+    int ans=palin(n);
+    cout<<ans;
     return 0;
 }
