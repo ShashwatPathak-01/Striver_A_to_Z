@@ -3,11 +3,16 @@ using namespace std;
 
 void bubble_sort(vector<int>&ver,int n){
     while(n--){
+        int isSwapped=0;
         for(int i=0;i<n;i++){
             if(ver[i]>ver[i+1]){
                 swap(ver[i],ver[i+1]);
+                isSwapped=1;
             }
         }
+        if(isSwapped==0)
+        break;
+        cout<<"runs\n";
     }
 }
 
@@ -22,3 +27,5 @@ int main(){
     cout<<ver[i]<<" ";
     return 0;
 }
+
+//the avg time complexity is O(n^2) and the best case time complextiy is O(n);
